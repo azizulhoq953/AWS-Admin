@@ -14,13 +14,14 @@ import { Instances } from './pages/Instance/Instances';
 import { Tags } from './pages/Tag/Tags';
 import { StoredWidgetPlacement } from './interfaces';
 import { Content } from './pages/content';
-import Event from './pages/server-side-table/from'
-import CreateDistributionForm from './pages/server-side-table/from'
+// import Event from './pages/server-side-table/from'
+// import CreateDistributionForm from './pages/server-side-table/from'
 // Import TopNavigation and Notifications
 import TopNavigation from './pages/non-console';
 import { Notifications } from './notifications';
 import Input from '@cloudscape-design/components/input';
 import AwsServicesCategories from './pages/AwsServicesCategories'
+import DistributionForm from './pages/create-distribution/form'
 const splitPanelMaxSize = 360;
 
 // Dynamically generate breadcrumbs based on the current route
@@ -35,8 +36,8 @@ const useBreadcrumbs = () => {
       return [{ text: 'Dashboard', href: '/' }, { text: 'Tags', href: '/tags' }];
     case '/content':
       return [{ text: 'Dashboard', href: '/' }, { text: 'Content', href: '/content' }];
-      case '/events':
-        return [{ text: 'Dashboard', href: '/' }, { text: 'Event', href: '/events' }];
+      case '/create-distribution':
+        return [{ text: 'Dashboard', href: '/' }, { text: 'DistributionForm', href: '/create-distribution' }];
         case '/allservice':
         return [{ text: 'Dashboard', href: '/' }, { text: 'AwsServicesCategories', href: '/allservice' }];
     default:
@@ -110,9 +111,9 @@ export function App() {
                 } />
                 <Route path="/instances" element={<Instances />} />
                 <Route path="/tags" element={<Tags />} />
-                <Route path="/events" element={<Event />} />
+                <Route path="/create-distribution" element={<DistributionForm onSubmit={undefined} />} />
                 <Route path="/allservice" element={<AwsServicesCategories />} />
-                <Route path="/from" Component={CreateDistributionForm} />
+                {/* <Route path="/from" Component={CreateDistributionForm} /> */}
                 
                 {/* Add more routes as needed */}
               </Routes>

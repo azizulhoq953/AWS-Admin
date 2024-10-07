@@ -39,7 +39,7 @@ export const resourcesBreadcrumbs = [
     ...resourcesBreadcrumbs,
     {
       text: 'Create distribution',
-      href: '../pages/server-side-table/from',
+      href: '/create-distribution',
     },
   ];
   // import '../pages/server-side-table/from'
